@@ -2,11 +2,11 @@ const Product = require("../models/Product");
 const { StatusCodes } = require("http-status-codes");
 
 const index = async (req, res) => {
-    const products = Product.find()
+    const products = await Product.find({})
 
     res.status(StatusCodes.OK).json({
         success: true,
-        data: products
+        products
     })
 }
 
